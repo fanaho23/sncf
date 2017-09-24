@@ -24,14 +24,24 @@ class CtrlSncf extends CI_Controller{
     }
     public function AfficherLesAgents()
     {
-        $LeAgent = $this->uri->segment(4);
+        
+        // Correction JB
+        // Attention ici on récupère le code de la formation
+        // Pour justement afficher les agents inscrits à la formation en question
+        $codeFormation = $this->uri->segment(3);
         $this->load->Model("Model_Agent");
-        //Appel de la méthode
-        
-        $data['lesAgents'] = $this->Model_Agent->GetAllAgents($LeAgent);
-        
+        $data['lesAgents'] = $this->Model_Agent->GetAllAgents($codeFormation);
         //Appel de la vue
-        $this->load->view(v_agent,$data);
+        $this->load->view("v_agent",$data);
+        
+//        $LeAgent = $this->uri->segment(4);
+//        $this->load->Model("Model_Agent");
+//        //Appel de la méthode
+//        
+//        $data['lesAgents'] = $this->Model_Agent->GetAllAgents($LeAgent);
+//        
+//        //Appel de la vue
+//        $this->load->view(v_agent,$data);
     }
     
     

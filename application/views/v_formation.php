@@ -5,8 +5,7 @@
             <?php 
                foreach($lesFormations as $formation){  
             ?>
-            <a href="<?php echo base_url();?>index.php/CtrlSncf/AfficherLesFormations/"<?php echo $formation->code; ?>><?php echo $formation->intitule; ?></a><br>
-            
+            <a href="<?php echo base_url();?>index.php/CtrlSncf/AfficherLesAgents/<?php echo $formation->code; ?>"><?php echo $formation->intitule; ?></a><br>
             <?php 
              }
             ?>
